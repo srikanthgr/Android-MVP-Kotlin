@@ -1,7 +1,8 @@
-package com.srikanth.androidmvpkotlin
+package com.srikanth.androidmvpkotlin.views.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.srikanth.androidmvpkotlin.R
 
 class MainActivity : AppCompatActivity() {
 
