@@ -7,6 +7,9 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class User(@SerializedName("user_id") @PrimaryKey var userId: Long,
-                @SerializedName("display_name") @PrimaryKey var displayName: String,
-                @SerializedName("reputation") @PrimaryKey var reputation: Long,
-                @SerializedName("profile_image") @PrimaryKey var profileImage: String)
+                @SerializedName("display_name")  var displayName: String,
+                @SerializedName("reputation")  var reputation: Long,
+                @SerializedName("profile_image")  var profileImage: String){
+    constructor() : this(-1, "", 0, "")
+
+}

@@ -2,11 +2,11 @@ package com.srikanth.androidmvpkotlin.presentation.presenters
 
 import com.srikanth.androidmvpkotlin.domain.GetUsers
 import com.srikanth.androidmvpkotlin.presentation.views.UserListView
-import com.srikanth.androidmvpkotlin.utils.AppSchedulerProvider
+import com.srikanth.androidmvpkotlin.utils.SchedulerProvider
 
 
 class UserListPresenter(private val getUsers: GetUsers,
-                        private val schedulerProvider: AppSchedulerProvider) : BasePresenter<UserListView>() {
+                        private val schedulerProvider: SchedulerProvider) : BasePresenter<UserListView>() {
     private val offset = 5
 
     private var page = 1
