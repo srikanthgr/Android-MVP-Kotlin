@@ -21,12 +21,11 @@ class DefaultUserRepository(private val userService: UserService,
 
     override fun getUsers(page: Int, forced: Boolean): Single<UserListModel> {
         return Single.create<UserListModel> { emitter: SingleEmitter<UserListModel> ->
-            /*if (shouldUpdate(page, forced)) {
+          if (shouldUpdate(page, forced)) {
                 loadUserFromNetwork(page, emitter)
             } else {
                 loadOfflineUsers(page, emitter)
-            }*/
-            loadUserFromNetwork(page, emitter);
+            }
         }
     }
 

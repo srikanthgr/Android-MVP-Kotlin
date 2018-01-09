@@ -3,6 +3,9 @@ package com.srikanth.androidmvpkotlin.presentation.presenters
 import com.srikanth.androidmvpkotlin.domain.GetUsers
 import com.srikanth.androidmvpkotlin.presentation.views.UserListView
 import com.srikanth.androidmvpkotlin.utils.SchedulerProvider
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 
 class UserListPresenter(private val getUsers: GetUsers,
@@ -17,8 +20,8 @@ class UserListPresenter(private val getUsers: GetUsers,
         loading = true
         val pageToRequest = if (forced) 1 else page
         getUsers.execute(pageToRequest, forced).
-                subscribeOn(schedulerProvider.ioScheduler()).
-                observeOn(schedulerProvider.uiScheduler()).
+                subscribeOn(Schedulers.io()).
+                observeOn(AndroidSchedulers.mainThread()).
                 subscribe({ users ->
                     loading = false
                     if (forced) {
