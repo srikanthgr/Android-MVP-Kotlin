@@ -1,6 +1,6 @@
-package com.srikanth.androidmvpkotlin.views
+package com.srikanth.androidmvpkotlin.presentation.views
 
-import com.srikanth.androidmvpkotlin.views.viewmodels.UserViewModel
+import com.srikanth.androidmvpkotlin.presentation.views.viewmodels.UserViewModel
 
 
 interface UserListView {

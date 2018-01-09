@@ -1,4 +1,4 @@
-package com.srikanth.androidmvpkotlin.presentation
+package com.srikanth.androidmvpkotlin.presentation.presenters
 
 /**
  * Created by Srikanth Roopa on 12/29/2017.

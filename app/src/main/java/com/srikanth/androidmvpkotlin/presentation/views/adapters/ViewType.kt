@@ -1,4 +1,4 @@
-package com.srikanth.androidmvpkotlin.views.adapters
+package com.srikanth.androidmvpkotlin.presentation.views.adapters
 
 /**
  * Include the type for the Recyclerview Adapter

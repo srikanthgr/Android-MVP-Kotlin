@@ -2,7 +2,7 @@ package com.srikanth.androidmvpkotlin.domain
 
 import com.srikanth.androidmvpkotlin.model.entities.UserListModel
 import com.srikanth.androidmvpkotlin.model.repositories.UserRepository
-import com.srikanth.androidmvpkotlin.views.viewmodels.UserViewModel
+import com.srikanth.androidmvpkotlin.presentation.views.viewmodels.UserViewModel
 import io.reactivex.Single
 
 

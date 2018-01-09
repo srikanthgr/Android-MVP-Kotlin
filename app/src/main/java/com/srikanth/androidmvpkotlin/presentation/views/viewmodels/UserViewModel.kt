@@ -1,7 +1,7 @@
-package com.srikanth.androidmvpkotlin.views.viewmodels
+package com.srikanth.androidmvpkotlin.presentation.views.viewmodels
 
-import com.srikanth.androidmvpkotlin.views.adapters.AdapterConstants
-import com.srikanth.androidmvpkotlin.views.adapters.ViewType
+import com.srikanth.androidmvpkotlin.presentation.views.adapters.AdapterConstants
+import com.srikanth.androidmvpkotlin.presentation.views.adapters.ViewType
 
 
 data class UserViewModel(val userId: Long,

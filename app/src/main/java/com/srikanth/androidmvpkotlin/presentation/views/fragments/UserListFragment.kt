@@ -1,9 +1,9 @@
-package com.srikanth.androidmvpkotlin.views.fragments
+package com.srikanth.androidmvpkotlin.presentation.views.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import com.srikanth.androidmvpkotlin.views.UserListView
-import com.srikanth.androidmvpkotlin.views.viewmodels.UserViewModel
+import com.srikanth.androidmvpkotlin.presentation.views.UserListView
+import com.srikanth.androidmvpkotlin.presentation.views.viewmodels.UserViewModel
 
 
 class UserListFragment : Fragment(), UserListView {
