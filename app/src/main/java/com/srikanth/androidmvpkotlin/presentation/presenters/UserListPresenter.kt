@@ -48,7 +48,7 @@ class UserListPresenter(private val getUsers: GetUsers,
     fun onScrollChanged(lastViewItemPosition: Int, totalItemCount: Int){
         if(!loading){
             if(lastViewItemPosition >= totalItemCount - offset){
-                getUsers
+                getUsers()
             }
         }
 
