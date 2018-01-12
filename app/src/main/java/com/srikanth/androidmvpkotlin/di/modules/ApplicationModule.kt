@@ -1,13 +1,15 @@
 package com.srikanth.androidmvpkotlin.di.modules
 
 import android.app.Application
-import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.content.Context
 import com.google.gson.Gson
 import com.srikanth.androidmvpkotlin.model.persistence.AppDatabase
+import com.srikanth.androidmvpkotlin.model.repositories.DefaultDetailsRepository
 import com.srikanth.androidmvpkotlin.model.repositories.DefaultUserRepository
+import com.srikanth.androidmvpkotlin.model.repositories.DetailsRepository
 import com.srikanth.androidmvpkotlin.model.repositories.UserRepository
+import com.srikanth.androidmvpkotlin.model.services.QuestionService
 import com.srikanth.androidmvpkotlin.model.services.UserService
 import com.srikanth.androidmvpkotlin.utils.*
 import dagger.Module
@@ -39,6 +41,15 @@ class ApplicationModule(val application: Application) {
 
     @Provides
     @Singleton
+    fun provideDetailsRepository(retrofit: Retrofit, database: AppDatabase, connectionHelper: ConnectionHelper, preferencesHelper: PreferencesHelper,
+                                 calendarWrapper: CalendarWrapper): DetailsRepository {
+        return DefaultDetailsRepository(retrofit.create(UserService::class.java),
+                retrofit.create(QuestionService::class.java), database.questionDao(), database.answerDao(), database.favoritedByUserDao(), connectionHelper, preferencesHelper,
+                calendarWrapper)
+    }
+
+    @Provides
+    @Singleton
     fun provideDatabase(context: Context)
             = Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME).build()
 
@@ -48,7 +59,7 @@ class ApplicationModule(val application: Application) {
 
     @Provides
     @Singleton
-    fun providePreferenceHelper(context:Context) = PreferencesHelper(context)
+    fun providePreferenceHelper(context: Context) = PreferencesHelper(context)
 
     @Provides
     @Singleton
@@ -56,6 +67,6 @@ class ApplicationModule(val application: Application) {
 
     @Provides
     @Singleton
-    fun provideSchedulerProvider() : SchedulerProvider = AppSchedulerProvider()
+    fun provideSchedulerProvider(): SchedulerProvider = AppSchedulerProvider()
 
 }
