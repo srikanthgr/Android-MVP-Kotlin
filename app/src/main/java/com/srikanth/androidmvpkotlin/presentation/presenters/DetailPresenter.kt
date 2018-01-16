@@ -3,7 +3,6 @@ package com.srikanth.androidmvpkotlin.presentation.presenters
 import com.srikanth.androidmvpkotlin.domain.GetDetails
 import com.srikanth.androidmvpkotlin.presentation.views.DetailView
 import com.srikanth.androidmvpkotlin.utils.SchedulerProvider
-import io.reactivex.Scheduler
 import io.reactivex.schedulers.Schedulers
 
 

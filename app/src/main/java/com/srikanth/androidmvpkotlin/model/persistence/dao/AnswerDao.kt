@@ -5,7 +5,6 @@ import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy
 import android.arch.persistence.room.Query
 import com.srikanth.androidmvpkotlin.model.entities.Answer
-import com.srikanth.androidmvpkotlin.model.entities.Question
 
 @Dao
 interface AnswerDao {
