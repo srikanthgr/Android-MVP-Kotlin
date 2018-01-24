@@ -14,4 +14,3 @@ val Fragment.app: App
     get() = activity.application as App
 
 fun ImageView.loadUrl(url: String) = com.bumptech.glide.Glide.with(context).load(url).into(this)
-
