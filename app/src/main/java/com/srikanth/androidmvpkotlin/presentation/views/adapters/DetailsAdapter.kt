@@ -10,7 +10,7 @@ import com.srikanth.androidmvpkotlin.presentation.views.adapters.delegateadapter
 
 class DetailsAdapter(private val listener:(String) -> Unit) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private var items : MutableList<ViewType>
+    private var items : MutableList<ViewType> = ArrayList()
 
     private var delegateAdapters = SparseArrayCompat<ViewTypeDelegateAdapter>()
 
@@ -19,7 +19,6 @@ class DetailsAdapter(private val listener:(String) -> Unit) : RecyclerView.Adapt
     }
 
     init {
-        items = ArrayList()
         delegateAdapters.put(AdapterConstants.USER_DETAILS, UserDetailsDelegateAdapter())
         delegateAdapters.put(AdapterConstants.HEADING, HeadingDelegateAdapter())
         delegateAdapters.put(AdapterConstants.QUESTION, QuestionDelegateAdapter(listener))

@@ -12,6 +12,7 @@ import com.srikanth.androidmvpkotlin.R
 import com.srikanth.androidmvpkotlin.di.modules.UserListFragmentModule
 import com.srikanth.androidmvpkotlin.presentation.presenters.UserListPresenter
 import com.srikanth.androidmvpkotlin.presentation.views.UserListView
+import com.srikanth.androidmvpkotlin.presentation.views.activities.MainActivity
 import com.srikanth.androidmvpkotlin.presentation.views.adapters.UserListAdapter
 import com.srikanth.androidmvpkotlin.presentation.views.viewmodels.UserViewModel
 import com.srikanth.androidmvpkotlin.utils.app
@@ -32,7 +33,8 @@ class UserListFragment : Fragment(), UserListView {
     private lateinit var layoutManager: LinearLayoutManager
 
     private fun openDetailFragment(user: UserViewModel, view: View) {
-        Toast.makeText(activity, user.displayName, Toast.LENGTH_SHORT).show()
+        val detailsFragment = DetailsFragment.newInstance(user)
+        (activity as MainActivity).addDetailsFragmentWithTransition(detailsFragment)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
